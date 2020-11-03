@@ -8,12 +8,12 @@ IGraphServiceClient graphClient = GraphServiceClient.builder().authenticationPro
 
 PrivilegedRoleSettings privilegedRoleSettings = new PrivilegedRoleSettings();
 privilegedRoleSettings.id = "9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3";
-privilegedRoleSettings.elevationDuration = "PT8H";
+privilegedRoleSettings.elevationDuration = DatatypeFactory.newInstance().newDuration("PT8H");
 privilegedRoleSettings.notificationToUserOnElevation = false;
 privilegedRoleSettings.ticketingInfoOnElevation = true;
 privilegedRoleSettings.mfaOnElevation = false;
-privilegedRoleSettings.maxElavationDuration = "PT0S";
-privilegedRoleSettings.minElevationDuration = "PT0S";
+privilegedRoleSettings.maxElavationDuration = DatatypeFactory.newInstance().newDuration("PT0S");
+privilegedRoleSettings.minElevationDuration = DatatypeFactory.newInstance().newDuration("PT0S");
 privilegedRoleSettings.lastGlobalAdmin = false;
 privilegedRoleSettings.isMfaOnElevationConfigurable = true;
 privilegedRoleSettings.approvalOnElevation = false;

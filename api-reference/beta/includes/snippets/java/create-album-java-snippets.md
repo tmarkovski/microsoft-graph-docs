@@ -17,7 +17,10 @@ LinkedList<DriveItem> childrenList = new LinkedList<DriveItem>();
 DriveItem children = new DriveItem();
 children.id = "1234asdf";
 childrenList.add(children);
-driveItem.children = childrenList;
+DriveItemCollectionResponse driveItemCollectionResponse = new DriveItemCollectionResponse();
+driveItemCollectionResponse.value = childrenList;
+DriveItemCollectionPage driveItemCollectionPage = new DriveItemCollectionPage(driveItemCollectionResponse, null);
+driveItem.children = driveItemCollectionPage;
 
 graphClient.drive().bundles()
 	.buildRequest()

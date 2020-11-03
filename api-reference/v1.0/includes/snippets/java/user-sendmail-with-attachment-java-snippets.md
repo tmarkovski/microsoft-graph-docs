@@ -23,9 +23,12 @@ LinkedList<Attachment> attachmentsList = new LinkedList<Attachment>();
 FileAttachment attachments = new FileAttachment();
 attachments.name = "attachment.txt";
 attachments.contentType = "text/plain";
-attachments.contentBytes = "SGVsbG8gV29ybGQh";
+attachments.contentBytes = Base64.getDecoder().decode("SGVsbG8gV29ybGQh");
 attachmentsList.add(attachments);
-message.attachments = attachmentsList;
+AttachmentCollectionResponse attachmentCollectionResponse = new AttachmentCollectionResponse();
+attachmentCollectionResponse.value = attachmentsList;
+AttachmentCollectionPage attachmentCollectionPage = new AttachmentCollectionPage(attachmentCollectionResponse, null);
+message.attachments = attachmentCollectionPage;
 
 graphClient.me()
 	.sendMail(message,null)

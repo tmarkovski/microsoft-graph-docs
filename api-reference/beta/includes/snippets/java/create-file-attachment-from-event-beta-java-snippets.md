@@ -8,7 +8,7 @@ IGraphServiceClient graphClient = GraphServiceClient.builder().authenticationPro
 
 FileAttachment attachment = new FileAttachment();
 attachment.name = "menu.txt";
-attachment.contentBytes = "bWFjIGFuZCBjaGVlc2UgdG9kYXk=";
+attachment.contentBytes = Base64.getDecoder().decode("bWFjIGFuZCBjaGVlc2UgdG9kYXk=");
 
 graphClient.me().events("AAMkAGI1AAAt9AHjAAA=").attachments()
 	.buildRequest()

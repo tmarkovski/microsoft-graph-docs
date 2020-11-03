@@ -10,9 +10,12 @@ Message message = new Message();
 LinkedList<Attachment> attachmentsList = new LinkedList<Attachment>();
 FileAttachment attachments = new FileAttachment();
 attachments.name = "guidelines.txt";
-attachments.contentBytes = "bWFjIGFuZCBjaGVlc2UgdG9kYXk=";
+attachments.contentBytes = Base64.getDecoder().decode("bWFjIGFuZCBjaGVlc2UgdG9kYXk=");
 attachmentsList.add(attachments);
-message.attachments = attachmentsList;
+AttachmentCollectionResponse attachmentCollectionResponse = new AttachmentCollectionResponse();
+attachmentCollectionResponse.value = attachmentsList;
+AttachmentCollectionPage attachmentCollectionPage = new AttachmentCollectionPage(attachmentCollectionResponse, null);
+message.attachments = attachmentCollectionPage;
 
 String comment = "if the project gets approved, please take a look at the attached guidelines before you decide on the name.";
 

@@ -46,11 +46,11 @@ timeConstraint.timeSlots = timeSlotsList;
 
 boolean isOrganizerOptional = false;
 
-String meetingDuration = "PT1H";
+Duration meetingDuration = DatatypeFactory.newInstance().newDuration("PT1H");
 
 boolean returnSuggestionReasons = true;
 
-String minimumAttendeePercentage = "100";
+Double minimumAttendeePercentage = 100d;
 
 graphClient.me()
 	.findMeetingTimes(attendeesList,locationConstraint,timeConstraint,meetingDuration,null,isOrganizerOptional,returnSuggestionReasons,minimumAttendeePercentage)

@@ -37,7 +37,10 @@ configuration1.contentUrl = "https://tabs.teams.microsoft.com/Youtube/Home/Youtu
 configuration1.websiteUrl = "https://www.youtube.com/watch?v=X8krAMdGvCQ";
 tabs1.configuration = configuration1;
 tabsList.add(tabs1);
-channels1.tabs = tabsList;
+TeamsTabCollectionResponse teamsTabCollectionResponse = new TeamsTabCollectionResponse();
+teamsTabCollectionResponse.value = tabsList;
+TeamsTabCollectionPage teamsTabCollectionPage = new TeamsTabCollectionPage(teamsTabCollectionResponse, null);
+channels1.tabs = teamsTabCollectionPage;
 channelsList.add(channels1);
 Channel channels2 = new Channel();
 channels2.displayName = "Planning 📅 ";
@@ -48,7 +51,10 @@ Channel channels3 = new Channel();
 channels3.displayName = "Issues and Feedback 🐞";
 channels3.description = "This is a sample of a channel that is not favorited by default, these channels will appear in the more channels overflow menu.";
 channelsList.add(channels3);
-team.channels = channelsList;
+ChannelCollectionResponse channelCollectionResponse = new ChannelCollectionResponse();
+channelCollectionResponse.value = channelsList;
+ChannelCollectionPage channelCollectionPage = new ChannelCollectionPage(channelCollectionResponse, null);
+team.channels = channelCollectionPage;
 TeamMemberSettings memberSettings = new TeamMemberSettings();
 memberSettings.allowCreateUpdateChannels = true;
 memberSettings.allowDeleteChannels = true;
@@ -83,7 +89,10 @@ installedAppsList.add(installedApps);
 TeamsAppInstallation installedApps1 = new TeamsAppInstallation();
 installedApps1.additionalDataManager().put("teamsApp@odata.bind", new JsonPrimitive("https://graph.microsoft.com/v1.0/appCatalogs/teamsApps('1542629c-01b3-4a6d-8f76-1938b779e48d')"));
 installedAppsList.add(installedApps1);
-team.installedApps = installedAppsList;
+TeamsAppInstallationCollectionResponse teamsAppInstallationCollectionResponse = new TeamsAppInstallationCollectionResponse();
+teamsAppInstallationCollectionResponse.value = installedAppsList;
+TeamsAppInstallationCollectionPage teamsAppInstallationCollectionPage = new TeamsAppInstallationCollectionPage(teamsAppInstallationCollectionResponse, null);
+team.installedApps = teamsAppInstallationCollectionPage;
 
 graphClient.teams()
 	.buildRequest()

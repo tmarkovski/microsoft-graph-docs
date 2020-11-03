@@ -16,7 +16,7 @@ allowedResourceActionsList.add("microsoft.directory/applications/basic/read");
 rolePermissions.allowedResourceActions = allowedResourceActionsList;
 rolePermissionsList.add(rolePermissions);
 unifiedRoleDefinition.rolePermissions = rolePermissionsList;
-unifiedRoleDefinition.isEnabled = "true";
+unifiedRoleDefinition.isEnabled = false;
 
 graphClient.roleManagement().directory().roleDefinitions()
 	.buildRequest()

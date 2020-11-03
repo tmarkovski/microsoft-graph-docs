@@ -6,8 +6,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 
 IGraphServiceClient graphClient = GraphServiceClient.builder().authenticationProvider( authProvider ).buildClient();
 
-ISynchronizationSchemaFilterOperatorsCollectionPage filterOperators = graphClient.servicePrincipals("{id}").synchronization().jobs("{jobId}").schema()
-	.filterOperators()
+Content content = graphClient.me().drive().items("{item-id}").thumbnails("{thumb-id}").{size}().content()
 	.buildRequest()
 	.get();
 

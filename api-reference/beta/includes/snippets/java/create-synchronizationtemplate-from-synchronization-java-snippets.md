@@ -8,7 +8,7 @@ IGraphServiceClient graphClient = GraphServiceClient.builder().authenticationPro
 
 SynchronizationTemplate synchronizationTemplate = new SynchronizationTemplate();
 synchronizationTemplate.id = "SCIM-Test1";
-synchronizationTemplate.applicationId = "{id}";
+synchronizationTemplate.applicationId = UUID.fromString("{id}");
 synchronizationTemplate.factoryTag = "CustomSCIM";
 
 graphClient.applications("{id}").synchronization().templates()

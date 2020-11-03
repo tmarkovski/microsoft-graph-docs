@@ -11,7 +11,7 @@ attachment.name = "name-value";
 attachment.contentType = "contentType-value";
 attachment.isInline = false;
 attachment.contentLocation = "contentLocation-value";
-attachment.contentBytes = "contentBytes-value";
+attachment.contentBytes = Base64.getDecoder().decode("contentBytes-value");
 
 graphClient.me().messages("{id}").attachments()
 	.buildRequest()

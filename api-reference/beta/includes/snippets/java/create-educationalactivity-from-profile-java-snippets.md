@@ -7,8 +7,8 @@ description: "Automatically generated file. DO NOT MODIFY"
 IGraphServiceClient graphClient = GraphServiceClient.builder().authenticationProvider( authProvider ).buildClient();
 
 EducationalActivity educationalActivity = new EducationalActivity();
-educationalActivity.completionMonthYear = "Date";
-educationalActivity.endMonthYear = "Date";
+educationalActivity.completionMonthYear = new DateOnly(1900,1,1);
+educationalActivity.endMonthYear = new DateOnly(1900,1,1);
 InstitutionData institution = new InstitutionData();
 institution.description = null;
 institution.displayName = "Colorado State University";
@@ -34,7 +34,7 @@ program.grade = "3.9";
 program.notes = null;
 program.webUrl = "https://biz.colostate.edu";
 educationalActivity.program = program;
-educationalActivity.startMonthYear = "Date";
+educationalActivity.startMonthYear = new DateOnly(1900,1,1);
 
 graphClient.me().profile().educationalActivities()
 	.buildRequest()

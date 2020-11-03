@@ -17,6 +17,9 @@ value1.id = "e58c072b-c9bb-a5c4-34ce-eb69af44fb1e";
 value1.additionalInformation = "test again";
 
 valueList.add(value1);
+TiIndicatorCollectionResponse tiIndicatorCollectionResponse = new TiIndicatorCollectionResponse();
+tiIndicatorCollectionResponse.value = valueList;
+TiIndicatorCollectionPage tiIndicatorCollectionPage = new TiIndicatorCollectionPage(tiIndicatorCollectionResponse, null);
 
 graphClient.security().tiIndicators()
 	.updateTiIndicators(valueList)

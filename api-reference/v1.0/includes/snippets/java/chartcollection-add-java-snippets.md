@@ -8,7 +8,7 @@ IGraphServiceClient graphClient = GraphServiceClient.builder().authenticationPro
 
 String type = "ColumnStacked";
 
-String sourceData = "A1:B1";
+JsonElement sourceData = JsonParser.parseString("A1:B1");
 
 String seriesBy = "Auto";
 

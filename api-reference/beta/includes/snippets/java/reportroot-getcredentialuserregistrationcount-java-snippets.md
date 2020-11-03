@@ -6,7 +6,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 
 IGraphServiceClient graphClient = GraphServiceClient.builder().authenticationProvider( authProvider ).buildClient();
 
-ICredentialUserRegistrationCountCollectionPage getCredentialUserRegistrationCount = graphClient.reports()
+IReportRootGetCredentialUserRegistrationCountCollectionPage getCredentialUserRegistrationCount = graphClient.reports()
 	.getCredentialUserRegistrationCount()
 	.buildRequest()
 	.get();

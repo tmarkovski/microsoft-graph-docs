@@ -15,10 +15,13 @@ files.fileName = "TOU.pdf";
 files.language = "en";
 files.isDefault = true;
 AgreementFileData fileData = new AgreementFileData();
-fileData.data = "SGVsbG8gd29ybGQ=";
+fileData.data = Base64.getDecoder().decode("SGVsbG8gd29ybGQ=");
 files.fileData = fileData;
 filesList.add(files);
-agreement.files = filesList;
+AgreementFileLocalizationCollectionResponse agreementFileLocalizationCollectionResponse = new AgreementFileLocalizationCollectionResponse();
+agreementFileLocalizationCollectionResponse.value = filesList;
+AgreementFileLocalizationCollectionPage agreementFileLocalizationCollectionPage = new AgreementFileLocalizationCollectionPage(agreementFileLocalizationCollectionResponse, null);
+agreement.files = agreementFileLocalizationCollectionPage;
 
 graphClient.agreements()
 	.buildRequest()

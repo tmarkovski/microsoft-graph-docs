@@ -14,7 +14,10 @@ linkedResources.webUrl = "http://microsoft.com";
 linkedResources.applicationName = "Microsoft";
 linkedResources.displayName = "Microsoft";
 linkedResourcesList.add(linkedResources);
-todoTask.linkedResources = linkedResourcesList;
+LinkedResourceCollectionResponse linkedResourceCollectionResponse = new LinkedResourceCollectionResponse();
+linkedResourceCollectionResponse.value = linkedResourcesList;
+LinkedResourceCollectionPage linkedResourceCollectionPage = new LinkedResourceCollectionPage(linkedResourceCollectionResponse, null);
+todoTask.linkedResources = linkedResourceCollectionPage;
 
 graphClient.me().todo().lists("AQMkADAwATM0MDAAMS0yMDkyLWVjMzYtM").tasks()
 	.buildRequest()

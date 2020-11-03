@@ -15,7 +15,10 @@ body.contentType = BodyType.HTML;
 body.content = "this is body content";
 posts.body = body;
 postsList.add(posts);
-conversationThread.posts = postsList;
+PostCollectionResponse postCollectionResponse = new PostCollectionResponse();
+postCollectionResponse.value = postsList;
+PostCollectionPage postCollectionPage = new PostCollectionPage(postCollectionResponse, null);
+conversationThread.posts = postCollectionPage;
 
 graphClient.groups("{id}").conversations("{id}").threads()
 	.buildRequest()

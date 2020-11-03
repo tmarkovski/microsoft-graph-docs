@@ -26,7 +26,10 @@ extensions.companyName = "Wingtip Toys";
 extensions.expirationDate = "2015-12-30T11:00:00Z";
 extensions.dealValue = 10000;
 extensionsList.add(extensions);
-message.extensions = extensionsList;
+ExtensionCollectionResponse extensionCollectionResponse = new ExtensionCollectionResponse();
+extensionCollectionResponse.value = extensionsList;
+ExtensionCollectionPage extensionCollectionPage = new ExtensionCollectionPage(extensionCollectionResponse, null);
+message.extensions = extensionCollectionPage;
 
 graphClient.me().messages()
 	.buildRequest()

@@ -16,7 +16,10 @@ identityProviders.id = "Facebook-OAuth";
 identityProviders.type = "Facebook";
 identityProviders.name = "Facebook";
 identityProvidersList.add(identityProviders);
-b2xIdentityUserFlow.identityProviders = identityProvidersList;
+IdentityProviderCollectionResponse identityProviderCollectionResponse = new IdentityProviderCollectionResponse();
+identityProviderCollectionResponse.value = identityProvidersList;
+IdentityProviderCollectionPage identityProviderCollectionPage = new IdentityProviderCollectionPage(identityProviderCollectionResponse, null);
+b2xIdentityUserFlow.identityProviders = identityProviderCollectionPage;
 
 graphClient.identity().b2xUserFlows()
 	.buildRequest()

@@ -8,7 +8,7 @@ IGraphServiceClient graphClient = GraphServiceClient.builder().authenticationPro
 
 PersonAnniversary personAnniversary = new PersonAnniversary();
 personAnniversary.type = AnniversaryType.BIRTHDAY;
-personAnniversary.date = "1980-01-08";
+personAnniversary.date = new DateOnly(1900,1,1);
 
 graphClient.me().profile().anniversaries()
 	.buildRequest()

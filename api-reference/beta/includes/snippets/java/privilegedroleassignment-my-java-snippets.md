@@ -6,7 +6,7 @@ description: "Automatically generated file. DO NOT MODIFY"
 
 IGraphServiceClient graphClient = GraphServiceClient.builder().authenticationProvider( authProvider ).buildClient();
 
-IPrivilegedRoleAssignmentCollectionPage my = graphClient.privilegedRoleAssignments()
+IPrivilegedRoleAssignmentMyCollectionPage my = graphClient.privilegedRoleAssignments()
 	.my()
 	.buildRequest()
 	.get();

@@ -23,7 +23,10 @@ newParticipants.emailAddress = emailAddress;
 newParticipantsList.add(newParticipants);
 posts.newParticipants = newParticipantsList;
 postsList.add(posts);
-conversationThread.posts = postsList;
+PostCollectionResponse postCollectionResponse = new PostCollectionResponse();
+postCollectionResponse.value = postsList;
+PostCollectionPage postCollectionPage = new PostCollectionPage(postCollectionResponse, null);
+conversationThread.posts = postCollectionPage;
 
 graphClient.groups("{id}").threads()
 	.buildRequest()

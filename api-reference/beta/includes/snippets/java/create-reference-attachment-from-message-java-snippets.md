@@ -11,7 +11,7 @@ attachment.name = "Personal pictures";
 attachment.sourceUrl = "https://contoso.com/personal/mario_contoso_net/Documents/Pics";
 attachment.providerType = ReferenceAttachmentProvider.ONE_DRIVE_CONSUMER;
 attachment.permission = ReferenceAttachmentPermission.EDIT;
-attachment.isFolder = "True";
+attachment.isFolder = false;
 
 graphClient.me().messages("AAMkAGE1M88AADUv0uFAAA=").attachments()
 	.buildRequest()

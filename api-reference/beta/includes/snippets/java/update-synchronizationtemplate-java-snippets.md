@@ -11,7 +11,7 @@ requestOptions.add(new HeaderOption("Authorization", "Bearer <token>"));
 
 SynchronizationTemplate synchronizationTemplate = new SynchronizationTemplate();
 synchronizationTemplate.id = "Slack";
-synchronizationTemplate.applicationId = "{id}";
+synchronizationTemplate.applicationId = UUID.fromString("{id}");
 synchronizationTemplate.factoryTag = "CustomSCIM";
 
 graphClient.applications("{id}").synchronization().templates("{templateId}")

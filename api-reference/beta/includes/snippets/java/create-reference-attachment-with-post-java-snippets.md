@@ -17,9 +17,12 @@ attachments.name = "Personal pictures";
 attachments.sourceUrl = "https://contoso.com/personal/mario_contoso_net/Documents/Pics";
 attachments.providerType = ReferenceAttachmentProvider.ONE_DRIVE_CONSUMER;
 attachments.permission = ReferenceAttachmentPermission.EDIT;
-attachments.isFolder = "True";
+attachments.isFolder = false;
 attachmentsList.add(attachments);
-post.attachments = attachmentsList;
+AttachmentCollectionResponse attachmentCollectionResponse = new AttachmentCollectionResponse();
+attachmentCollectionResponse.value = attachmentsList;
+AttachmentCollectionPage attachmentCollectionPage = new AttachmentCollectionPage(attachmentCollectionResponse, null);
+post.attachments = attachmentCollectionPage;
 
 graphClient.groups("1848753d-185d-4c08-a4e4-6ee40521d115").threads("AAQkADJUdfolA==")
 	.reply(post)

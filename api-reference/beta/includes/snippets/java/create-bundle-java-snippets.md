@@ -18,7 +18,10 @@ childrenList.add(children);
 DriveItem children1 = new DriveItem();
 children1.id = "1234qwerty";
 childrenList.add(children1);
-driveItem.children = childrenList;
+DriveItemCollectionResponse driveItemCollectionResponse = new DriveItemCollectionResponse();
+driveItemCollectionResponse.value = childrenList;
+DriveItemCollectionPage driveItemCollectionPage = new DriveItemCollectionPage(driveItemCollectionResponse, null);
+driveItem.children = driveItemCollectionPage;
 
 graphClient.drive().bundles()
 	.buildRequest()

@@ -11,7 +11,7 @@ privilegedApproval.userId = "userId-value";
 privilegedApproval.roleId = "roleId-value";
 privilegedApproval.approvalType = "approvalType-value";
 privilegedApproval.approvalState = ApprovalState.PENDING;
-privilegedApproval.approvalDuration = "datetime-value";
+privilegedApproval.approvalDuration = DatatypeFactory.newInstance().newDuration("datetime-value");
 
 graphClient.privilegedApproval()
 	.buildRequest()
